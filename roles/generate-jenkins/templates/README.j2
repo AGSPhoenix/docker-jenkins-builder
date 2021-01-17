@@ -359,12 +359,12 @@ Container images are configured using parameters passed at runtime (such as thos
 {% endif %}
 {% if param_usage_include_vols %}
 {% for item in param_volumes %}
-| `-v {{ item.vol_path }}` | {{ item.desc }} |
+| `-v {{ item.vol_host_path }}:{{ item.vol_path }}` | {{ item.desc }} |
 {% endfor %}
 {% endif %}
 {% if opt_param_usage_include_vols %}
 {% for item in opt_param_volumes %}
-| `-v {{ item.vol_path }}` | {{ item.desc }} |
+| `-v {{ item.vol_host_path }}:{{ item.vol_path }}` | {{ item.desc }} |
 {% endfor %}
 {% endif %}
 {% if param_device_map %}
